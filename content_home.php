@@ -7,9 +7,9 @@
 
 <?php
 
-//    User::insertUser('newb', '0000', 'NOM', 'PRENOM', '1000', '1000-01-01', '0@gmail.com', 'feuille.css');
+    User::insertUser('1@gmail.com', '0000', 'M', 'NOM', 'PRENOM', '2000-01-01');
 
-    $guy = User::getUser("newb");
+    $guy = User::getUser("1@gmail.com");
     echo "Bonjour $guy->prenom $guy->nom <br>";
 //    $guy->updateMDP("test");
 //    var_dump($guy);

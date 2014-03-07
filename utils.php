@@ -1,5 +1,7 @@
 <?php
 
+require_once 'User.php';
+
 function generateHTMLHead($title, $styleSheet) {
     echo <<<CHAINE_DE_FIN
     <head>
@@ -65,7 +67,6 @@ function getPageTitle($askedPage){
   //Parcours du tableau des pages (on peut utiliser egalement une boucle "for")
   foreach($tabPages as $page){
     if (strcmp($page->name,$askedPage)==0){
-        var_dump($page);
         return $page->title;
     }
     
@@ -104,58 +105,6 @@ class Database{
         }
         return $dbh;
         
-    }
-}
-
-
-class User{
-    public $login;
-    public $mdp;
-    public $nom;
-    public $prenom;
-    public $naissance;
-    public $email;
-    public $feuille;
-    
-    public function __toString(){
-        return $this->nom;
-    }
-    
-    public static function insertUser($login, $mdp, $nom, $prenom, $promotion, $naissance, $email, $feuille) {
-
-        $dbh = Database::connect();
-        $sth = $dbh->prepare("INSERT INTO `users`(`login`, `mdp`, `nom`, `prenom`, `promotion`, `naissance`, `email`, `feuille`) VALUES(?,SHA1(?),?,?,?,?,?,?)");
-        $sth->execute(array($login, $mdp, $nom, $prenom, $promotion, $naissance, $email, $feuille));
-        $dbh = null;
-    }
-
-    public function testerMDP($mdp){
-        return $this->mdp == sha1($mdp);
-    }
-
-    
-    public function updateMDP($mdp){
-        $dbh = Database::connect();
-        $sth = $dbh->prepare("UPDATE Users SET mdp=sha1(?) WHERE login=?");
-        $sth->execute(array($mdp,$this->login));
-    }
-
-    
-    public static function getUser($login){
-        
-        $dbh = Database::connect();
-        $query = "SELECT * FROM Users WHERE login=?";
-        $sth = $dbh->prepare($query);
-        $sth->setFetchMode(PDO::FETCH_CLASS,'User');
-        $sth->execute(array($login));
-        $reponse = null;
-        if ($sth->rowCount()>0){
-            $reponse = $sth->fetch();
-        }
-        $sth->closeCursor();
-        $dbh = null;
-        return $reponse;
-
     }
 }
 
