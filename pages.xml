@@ -27,12 +27,13 @@ and open the template in the editor.
     </page>
     <page>
         <name>resultat1</name>
-        <menutitle>User Space</menutitle>
-        <title>User Space</title>
+        <menutitle>validation inscription</menutitle>
+        <title>validation inscription</title>
     </page>
     <page>
         <name>printForms</name>
-        <menutitle>User Space</menutitle>
-        <title>User Space</title>
-    </page>    
+        <menutitle>printForms</menutitle>
+        <title>printForms</title>
+    </page>   
+    
 </pages>

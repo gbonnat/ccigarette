@@ -6,7 +6,24 @@ and open the template in the editor.
 -->
 <html>
     <?php
-        require('utils.php');
+    session_name("NomDeSessionAModifierSelonVotreGout" );
+    // ne pas mettre d'espace dans le nom de session !
+    session_start();
+    if (!isset($_SESSION['initiated'])) {
+        session_regenerate_id();
+        $_SESSION['initiated'] = true;
+    }
+    // Décommenter la ligne suivante pour afficher le tableau $_SESSION pour le debuggage
+    // print_r($_SESSION);
+?>
+
+<?php 
+    require_once("utils.php");
+    require_once("printForms.php");
+    require_once("logInOut.php");
+?>
+    <?php
+       
         
 //        if(array_key_exists('taille',$_GET)){
 //                $dim=$_GET['taille'];
@@ -25,10 +42,22 @@ and open the template in the editor.
         else{$pageTitle='Erreur';}
         generateHTMLHead($pageTitle, 'style.css');
     ?>
+    
+    <?php
+    if (array_key_exists('todo',$_GET) && ($_GET['todo']=="login")){
+        logIn();
+    }
+    if (array_key_exists('todo',$_GET) && ($_GET['todo']=="logout")){
+        logOut();
+    }
+?>
+    
+    
     <body>
         <?php
             generateHTMLHeader($pageTitle);
         ?>
+        
         
         <div id="content">
             <?php
