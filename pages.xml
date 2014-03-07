@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<pages>
+    <page>
+        <name>content_home</name>
+        <menutitle>Home Page</menutitle>
+        <title>Club Cigarette</title>
+    </page>
+    <page>
+        <name>content_products</name>
+        <menutitle>Club Boutique</menutitle>
+        <title>The Boutique</title>
+    </page>
+    <page>
+        <name>content_users</name>
+        <menutitle>User Space</menutitle>
+        <title>User Space</title>
+    </page>
+</pages>
