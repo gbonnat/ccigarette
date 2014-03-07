@@ -114,7 +114,6 @@ class User{
     public $prenom;
     public $naissance;
     public $email;
-    public $email;
     public $feuille;
     
     public function __toString(){
