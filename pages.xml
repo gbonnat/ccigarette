@@ -23,7 +23,7 @@ and open the template in the editor.
     <page>
         <name>inscription</name>
         <menutitle>User Space</menutitle>
-        <title>User Space</title>
+        <title>Inscription</title>
     </page>
     <page>
         <name>resultat1</name>

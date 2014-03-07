@@ -41,6 +41,8 @@ and open the template in the editor.
         }
         else{$pageTitle='Erreur';}
         generateHTMLHead($pageTitle, 'style.css');
+        
+        printLoginForm($askedPage);
     ?>
     
     <?php

@@ -18,8 +18,8 @@
     if ($_GET["genre"] == "mlle") echo "Mlle " ;
   echo $_GET["prenom"] . " !";
   } else {
-  ?>
   
+      ?>
   <form method="get">
     <p>Civilité :
       <input name="genre" value="m" type="radio" checked="true" required />M.
@@ -33,8 +33,11 @@
     <p>Mot de passe : <input type="password" name="mdp" required /> *</p>
     
     <p><input type="submit" value="Valider" /></p>
-  </form
+  </form>
     <?php
+    
+    
+    
   }
   ?>
 </body>
