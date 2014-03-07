@@ -1,5 +1,5 @@
 <h2>
-    Bienvenue au club.
+    Bienvenue au club. 
 </h2>
 
 <h3>Attention, ici on est très sélect</h3>
