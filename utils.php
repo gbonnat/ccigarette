@@ -2,6 +2,7 @@
 
 require_once 'User.php';
 
+
 function generateHTMLHead($title, $styleSheet) {
     echo <<<CHAINE_DE_FIN
     <head>

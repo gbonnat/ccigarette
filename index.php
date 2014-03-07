@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <?php
         require('utils.php');
+        require_once ('printForms.php');
         
 //        if(array_key_exists('taille',$_GET)){
 //                $dim=$_GET['taille'];
@@ -24,6 +25,8 @@ and open the template in the editor.
         }
         else{$pageTitle='Erreur';}
         generateHTMLHead($pageTitle, 'style.css');
+        
+        printLoginForm($askedPage);
     ?>
     <body>
         <?php

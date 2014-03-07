@@ -38,8 +38,8 @@ class User{
     
     public function updateMDP($mdp){
         $dbh = Database::connect();
-        $sth = $dbh->prepare("UPDATE Users SET mdp=sha1(?) WHERE login=?");
-        $sth->execute(array($mdp,$this->login));
+        $sth = $dbh->prepare("UPDATE Users SET mdp=sha1(?) WHERE email=?");
+        $sth->execute(array($mdp,$this->email));
     }
 
     

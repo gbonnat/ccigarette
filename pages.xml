@@ -23,16 +23,16 @@ and open the template in the editor.
     <page>
         <name>inscription</name>
         <menutitle>User Space</menutitle>
-        <title>User Space</title>
+        <title>Inscription</title>
     </page>
     <page>
         <name>resultat1</name>
         <menutitle>User Space</menutitle>
-        <title>User Space</title>
+        <title>resultat1</title>
     </page>
     <page>
         <name>printForms</name>
         <menutitle>User Space</menutitle>
-        <title>User Space</title>
+        <title>printForms</title>
     </page>    
 </pages>
