@@ -103,6 +103,7 @@ class Database{
             exit(0);
         }
         return $dbh;
+        
     }
 }
 
@@ -117,7 +118,7 @@ class User{
     public $feuille;
     
     public function __toString(){
-        return $this->login;
+        return $this->nom;
     }
     
     public static function insertUser($login, $mdp, $nom, $prenom, $promotion, $naissance, $email, $feuille) {
@@ -128,12 +129,33 @@ class User{
         $dbh = null;
     }
 
-    public static function testerMdp(){
-        TODO;
+    public function testerMDP($mdp){
+        return $this->mdp == sha1($mdp);
     }
+
     
-    public static function getUser(){
-        TODO;
+    public function updateMDP($mdp){
+        $dbh = Database::connect();
+        $sth = $dbh->prepare("UPDATE Users SET mdp=sha1(?) WHERE login=?");
+        $sth->execute(array($mdp,$this->login));
+    }
+
+    
+    public static function getUser($login){
+        
+        $dbh = Database::connect();
+        $query = "SELECT * FROM Users WHERE login=?";
+        $sth = $dbh->prepare($query);
+        $sth->setFetchMode(PDO::FETCH_CLASS,'User');
+        $sth->execute(array($login));
+        $reponse = null;
+        if ($sth->rowCount()>0){
+            $reponse = $sth->fetch();
+        }
+        $sth->closeCursor();
+        $dbh = null;
+        return $reponse;
+
     }
 }
 
