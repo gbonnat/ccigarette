@@ -2,9 +2,9 @@
 require_once('User.php');
 
 function logIn(){
-    if (array_key_exists('login', $_POST)&& array_key_exists('mdp', $_POST)){
+    if (array_key_exists('login', $_POST)&& array_key_exists('password', $_POST)){
         $user = User::getUser($_POST['login']);
-        if (! $user==NULL && $user->testerMDP($_POST['mdp'])){
+        if (! $user==NULL && $user->testerMDP($_POST['password'])){
             $_SESSION['loggedIn'] = true;
             $_SESSION['login'] = $user->login;
             $_SESSION['nom'] = $user->nom;

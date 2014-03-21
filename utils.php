@@ -19,8 +19,14 @@ CHAINE_DE_FIN;
 function generateHTMLHeader($pageTitle) {
     echo '<header id="entete">
             <h1>'.$pageTitle.'</h1>
-            <p>Détails supplémentaires</p>
         </header>';
+    
+    if ($_SESSION["loggedIn"]){
+        echo    "<ul>";
+        echo        "<li><a href='changepassword.php'>Change password</a></li>";
+        echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
+        echo    "</ul>";
+        }
         
     generateMenu();
 }
@@ -30,13 +36,13 @@ function generateHTMLFooter() {
     echo "<p>Designed by Grégoire Bonnat</p>" . PHP_EOL;
     echo "<div id='logos'>" . PHP_EOL;
     echo "<a href='https://www.facebook.com/gregoire.bonnat'>
-                        <img src='fb.png' class='logo'>
+                        <img src='images/fb.png' class='logo'>
                     </a>" . PHP_EOL;
     echo "<a href='https://twitter.com/GBonnat'>
-                        <img src='twitter.png' class='logo'>
+                        <img src='images/twitter.png' class='logo'>
                     </a>" . PHP_EOL;
     echo "<a href='http://www.linkedin.com/pub/gr%C3%A9goire-bonnat/82/a98/ba2'>
-                        <img src='linkedin.png' class='logo'>
+                        <img src='images/linkedin.png' class='logo'>
                     </a>" . PHP_EOL;
     echo "</div>
     </footer>";

@@ -30,7 +30,7 @@
     <p>Nom : <input type="text" name="nom" required /> *</p>
     <p>Code postal : <input type="number" name="code postal" required /> *</p>   
     <p>email : <input type="email" name="email" required /> *</p>
-    <p>Mot de passe : <input type="password" name="mdp" required /> *</p>
+    <p>Mot de passe : <input type="password" name="password" required /> *</p>
     
     <p><input type="submit" value="Valider" /></p>
   </form>

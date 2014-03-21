@@ -13,7 +13,7 @@
  */
 class User{
     public $email;
-    public $mdp;
+    public $password;
     public $title;
     public $nom;
     public $prenom;
@@ -23,25 +23,29 @@ class User{
         return $this->nom;
     }
     
-    public static function insertUser($email, $mdp, $title, $nom, $prenom,$naissance) {
+    public static function insertUser($email, $password, $title, $nom, $prenom,$naissance) {
 
         $dbh = Database::connect();
-        $sth = $dbh->prepare("INSERT INTO `users`(`email`, `mdp`, `title`, `nom`, `prenom`, `naissance`) VALUES(?,SHA1(?),?,?,?,?)");
-        $sth->execute(array($email, $mdp, $title, $nom, $prenom, $naissance));
+        $sth = $dbh->prepare("INSERT INTO `users`(`email`, `password`, `title`, `nom`, `prenom`, `naissance`) VALUES(?,SHA1(?),?,?,?,?)");
+        $sth->execute(array($email, $password, $title, $nom, $prenom, $naissance));
         $dbh = null;
     }
 
-    public function testerMDP($mdp){
-        return $this->mdp == sha1($mdp);
+    public function testerMDP($password){
+        return $this->password == sha1($password);
     }
 
     
-    public function updateMDP($mdp){
+    public function updateMDP($password){
         $dbh = Database::connect();
-        $sth = $dbh->prepare("UPDATE Users SET mdp=sha1(?) WHERE email=?");
-        $sth->execute(array($mdp,$this->email));
+        $sth = $dbh->prepare("UPDATE Users SET password=sha1(?) WHERE email=?");
+        $sth->execute(array($password,$this->email));
     }
 
+       public static function newUser($login){
+        if (User::getUser($login)==null) return true;
+        else return false;
+    }
     
     public static function getUser($email){
         
@@ -59,4 +63,46 @@ class User{
         return $reponse;
 
     }
+    
+    public static function register(){
+    if(isset($_POST["email"]) && $_POST["email"] != "" &&
+    isset($_POST["up"]) && $_POST["up"] != "" &&
+    isset($_POST["up2"]) && $_POST["up2"] != "" &&
+    isset($_POST["title"]) && $_POST["title"] != "" &&        
+    isset($_POST["prenom"]) && $_POST["prenom"] != "" &&
+    isset($_POST["nom"]) && $_POST["nom"] != "" &&
+    isset($_POST["naissance"]) && $_POST["naissance"] != "" &&
+    $_POST["up"]==$_POST["up2"]){
+        if  (User::insertUser($_POST["email"],$_POST["up"],$_POST["title"],$_POST["prenom"],$_POST["nom"],$_POST["naissance"])){
+            $_SESSION['loggedIn'] = true;
+            }
+        else {
+            echo "<p> error, login already exists, unmatching passwords </p>";
+            header('Location: register.php');
+            exit();
+            }
+    } else {echo "ERRRRRRRRRRRRRRRRREEUUUR"; exit();}
+   
+ }
+ 
+  public static function changepassword(){
+     if (!estConnecte()){
+    echo <<<END
+    <p> Vous devez etre connecté pour avoir accès à la page de changement de mot de passe</p>
+END;
+    }
+
+    else{
+    if(isset($_POST["email"]) && $_POST["email"] != "" &&
+    isset($_POST["up"]) && $_POST["up"] != "" &&
+    isset($_POST["up1"]) && $_POST["up1"] != "" &&
+    isset($_POST["up2"]) && $_POST["up2"] != "" &&
+    (!User::nouvelUtilisateur($_POST["login"])|| $_SESSION['loggedIn'])&&
+    $_POST["up1"]==$_POST["up2"]&&
+    User::testerMdp($_POST["login"],$_POST["up"])){
+        User::updateMDP($_POST["up2"],$_POST["login"]);
+    }
+    }
+}
+    
 }

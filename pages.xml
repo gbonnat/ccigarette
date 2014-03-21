@@ -35,5 +35,10 @@ and open the template in the editor.
         <menutitle>printForms</menutitle>
         <title>printForms</title>
     </page>   
+    <page>
+        <name>register</name>
+        <menutitle>register</menutitle>
+        <title>Join the Club</title>
+    </page>   
     
 </pages>
