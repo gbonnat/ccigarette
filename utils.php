@@ -16,12 +16,12 @@ function generateHTMLHead($title, $styleSheet) {
 CHAINE_DE_FIN;
 }
 
-function generateHTMLHeader($pageTitle) {
+function generateHTMLHeader() {
     echo '<header id="entete">
             <h1>'."Club Cigarette".'</h1>
         </header>';
     
-    printLoginForm($pageTitle);
+    
     
     if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
         echo    "<ul>";
@@ -30,16 +30,11 @@ function generateHTMLHeader($pageTitle) {
         echo    "</ul>";
         }
         
-    echo '<header id="entete">
-        <h2>'.$pageTitle.'</h2>
-    </header>';
-        
-    generateMenu();
 }
 
 function generateHTMLFooter() {
     echo "<footer>" . PHP_EOL;
-    echo "<p>Designed by Grégoire Bonnat</p>" . PHP_EOL;
+    echo "<p>Designed by Grégoire Bonnat & Julien Mercier</p>" . PHP_EOL;
     echo "<div id='logos'>" . PHP_EOL;
     echo "<a href='https://www.facebook.com/gregoire.bonnat'>
                         <img src='images/fb.png' class='logo'>
