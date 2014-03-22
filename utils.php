@@ -18,15 +18,21 @@ CHAINE_DE_FIN;
 
 function generateHTMLHeader($pageTitle) {
     echo '<header id="entete">
-            <h1>'.$pageTitle.'</h1>
+            <h1>'."Club Cigarette".'</h1>
         </header>';
     
-    if ($_SESSION["loggedIn"]){
+    printLoginForm($pageTitle);
+    
+    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
         echo    "<ul>";
         echo        "<li><a href='changepassword.php'>Change password</a></li>";
         echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
         echo    "</ul>";
         }
+        
+    echo '<header id="entete">
+        <h2>'.$pageTitle.'</h2>
+    </header>';
         
     generateMenu();
 }

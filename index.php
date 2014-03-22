@@ -7,7 +7,7 @@ and open the template in the editor.
 
 <?php
 
-session_name("NomDeSessionAModifierSelonVotreGout");
+session_name("SessionClub");
 // ne pas mettre d'espace dans le nom de session !
 
 session_start();
@@ -60,7 +60,7 @@ if ($authorized) {
 }
 generateHTMLHead($pageTitle, 'style.css');
 
-printLoginForm($askedPage);
+
 
 
 if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "login")) {
@@ -75,6 +75,7 @@ if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "logout")) {
     <body>
 <?php
 generateHTMLHeader($pageTitle);
+
 ?>
 
 
