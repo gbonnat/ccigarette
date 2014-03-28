@@ -22,7 +22,7 @@ require_once("printForms.php");
 require_once("logInOut.php");
 
 // traitement des contenus de formulaires
-if (isset($_GET["todo"])) {
+/*if (isset($_GET["todo"])) {
     switch ($_GET['todo']) {
         case 'login': logIn();
             break;
@@ -33,7 +33,7 @@ if (isset($_GET["todo"])) {
         case 'changepassword':User::changepassword();
             break;
     }
-}
+}*/
 
 // Décommenter la ligne suivante pour afficher le tableau $_SESSION pour le debuggage
 //print_r($_SESSION);

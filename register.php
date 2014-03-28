@@ -1,52 +1,58 @@
+//<h2>M'inscrire</h2>
+
+
 <?php
+require_once('User.php');
 
-require_once('utils.php');
-$form_values_valid=false;
-generateHTMLHeader("register", "utilities/defi5.css");
+$nom = "";
+if (array_key_exists('nom',$_POST)){
+    $nom = $_POST['nom'];
+}
 
-echo<<<lapin
-  <section id="newregistry">
-  <h1>Become a member !</h1>
-  <form action="index.php?todo=register" method=post 
-       oninput="up2.setCustomValidity(up2.value != up.value ? 'Passwords do not match.' : '')">
+$prenom = "";
+if (array_key_exists('prenom',$_POST)){
+    $prenom = $_POST['prenom'];
+}
+
+$erreur = "";
+$ok = FALSE;
+$tentative = FALSE;
+if (isset($_POST['email']) && !$_POST['email']=="" && isset($_POST['password']) && isset($_POST['mdp2']) && $_POST['password']==$_POST['mdp2']){
+    $tentative = TRUE;
+    $ok= User::insertUser($_POST['email'],$_POST['password'],$_POST['title'],$_POST['nom'],$_POST['prenom'],$_POST['naissance']);
+}
+
+    if ($ok){
+         $_SESSION['loggedIn'] = true;
+        echo "Bienvenue sur notre site";
        
-     <p>
-<label for="Email">Email:</label>
- <input id=" Email" type=text required size="35" maxlength="35" name=email placeholder="Email" >
-</p>
-  <p>
-<label for="password1">Password:</label>
- <input id="password1" type=password required size="31" maxlength="31" name=up placeholder="Password">
-</p>
-  <p>
-<label for="password2">Confirm Password:</label>
- <input id="password2" type=password name=up2 placeholder="Confirm Password" >
-</p>
-<p>
-<label for="Gender">Gender:</label>
-<input name="title" value="f" type="radio" checked="checked" required />F
-      <input name="title" value="m" type="radio" />M
-    </p>
-  <p>
-<label for="First Name">First Name:</label>
- <input id="First Name" type=text required size="30" maxlength="30" name=prenom placeholder="First Name" >
-</p> 
-  <p>
-<label for="Family Name">Family Name:</label>
- <input id="Family Name" type=text required size="27" maxlength="27" name=nom placeholder="Family Name">
-</p>
-  <p>
-<label for="Date of Birth">Date of Birth:</label>
- <input id="Date of Birth" type=date required name=naissance placeholder="Dare of Bith">
-</p>
-<p>
-    <input type=submit value="Create account">
-</p>
+
+    }
+    else{
+        if ($tentative){
+            echo "Email déjà rattaché à un compte!";
+        }
+        if (isset($_POST['password']) && isset($_POST['mdp2']) && $_POST['password']!=$_POST['mdp2']){
+            echo "mdp différents!";
+            
+        }
+
+
+echo<<<FIN
+<form action='index.php?page=register' method='POST'>
+    <input type='email' name='email' placeholder='email'><br>
+    <input type='password' name='password' placeholder='mot de passe'><br>
+    <input type='password' name='mdp2' placeholder='mot de passe (confirmation)'><br>
+    <input name="title" value="f" type="radio" checked="checked" required />Mme
+    <input name="title" value="m" type="radio" />M. <br>
+    <input type='text' name='nom' placeholder='nom' value='$nom'><br>
+    <input type='text' name='prenom' placeholder='prénom' value='$prenom'><br>
+    <input id="Date of Birth" type=date required name=naissance placeholder="Dare of Bith"><br>
+    <input type='submit' action='valider'>
 </form>
-</section>
-</body>
-</html>
-lapin;
-
-
+FIN;
+    }
 ?>
+   
+
+
