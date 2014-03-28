@@ -43,8 +43,8 @@ echo<<<FIN
     <input type='email' name='email' placeholder='email'><br>
     <input type='password' name='password' placeholder='mot de passe'><br>
     <input type='password' name='mdp2' placeholder='mot de passe (confirmation)'><br>
-    <input name="title" value="f" type="radio" checked="checked" required />Mme
-    <input name="title" value="m" type="radio" />M. <br>
+    <input name="title" value="Mme" type="radio" checked="checked" required />Mme
+    <input name="title" value="M." type="radio" />M. <br>
     <input type='text' name='nom' placeholder='nom' value='$nom'><br>
     <input type='text' name='prenom' placeholder='prénom' value='$prenom'><br>
     <input id="Date of Birth" type=date required name=naissance placeholder="Dare of Bith"><br>

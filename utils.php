@@ -1,6 +1,6 @@
 <?php
 
-require_once 'User.php';
+//require_once 'User.php';
 
 
 function generateHTMLHead($title, $styleSheet) {
@@ -25,7 +25,7 @@ function generateHTMLHeader() {
     
     if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
         echo    "<ul>";
-        echo        "<li><a href='changepassword.php'>Change password</a></li>";
+        echo        "<li><a href='content_users.php'>Mon compte</a></li>";
         echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
         echo    "</ul>";
         }
