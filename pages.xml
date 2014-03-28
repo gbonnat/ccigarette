@@ -21,21 +21,6 @@ and open the template in the editor.
         <title>User Space</title>
     </page>
     <page>
-        <name>inscription</name>
-        <menutitle>User Space</menutitle>
-        <title>Inscription</title>
-    </page>
-    <page>
-        <name>resultat1</name>
-        <menutitle>validation inscription</menutitle>
-        <title>validation inscription</title>
-    </page>
-    <page>
-        <name>printForms</name>
-        <menutitle>printForms</menutitle>
-        <title>printForms</title>
-    </page>   
-    <page>
         <name>register</name>
         <menutitle>register</menutitle>
         <title>Join the Club</title>
