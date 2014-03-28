@@ -19,7 +19,7 @@ class User{
     public $prenom;
     public $naissance;
     
-    public function __toString(){
+    public function toString(){
         return $this->nom;
     }
     

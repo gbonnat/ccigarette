@@ -9,6 +9,7 @@ function logIn(){
             $_SESSION['email'] = $user->email;
             $_SESSION['nom'] = $user->nom;
             $_SESSION['prenom'] = $user->prenom;
+            $_SESSION['title'] = $user->title;
             return true;
         }
     }
@@ -19,7 +20,7 @@ function logIn(){
 
 function logOut(){   
     $_SESSION['loggedIn'] = false;
-    unset($_SESSION['login']);
+    unset($_SESSION['email']);
     unset($_SESSION['nom']);
     unset($_SESSION['prenom']);
 }
