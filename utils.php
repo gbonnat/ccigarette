@@ -19,7 +19,9 @@ CHAINE_DE_FIN;
 }
 
 function generateHTMLHeader($askedPage) {
-    echo '<header><h1 id="logo">'."Club Cigarette".'</h1>';   
+    echo '<header>';
+    echo '<img src="images/logo_cc.png" id="logo_cc">';
+    echo '<h1 id="logo">'."Club Cigarette".'</h1>';   
     
     if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]){
     printLoginForm($askedPage);
