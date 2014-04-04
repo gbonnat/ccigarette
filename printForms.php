@@ -2,7 +2,7 @@
 
 function printLoginForm($askedpage){
     echo<<<FIN
-    <form action="index.php?todo=login&page=$askedpage" method="POST">
+    <form action="index.php?todo=login&page=$askedpage" method="POST" class='login'>
         <input type="email" name="email" placeholder="email">
         <input type="password" name="password" placeholder="mot de passe">
         <input type="submit" value="login">
