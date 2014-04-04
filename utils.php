@@ -11,6 +11,8 @@ function generateHTMLHead($title, $styleSheet) {
         <meta name="keywords" content="Mots clefs relatifs à cette page"/>
         <meta name="description" content="Descriptif court"/>
         <link rel="stylesheet" type="text/css" href="$styleSheet" />
+        <script type="text/javascript" src="js/code.js"></script>    
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>    
         <title>$title</title>
     </head>               
 CHAINE_DE_FIN;
