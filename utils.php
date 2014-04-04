@@ -26,6 +26,7 @@ function generateHTMLHeader($askedPage) {
         echo '<div class="login">';
         echo    "<ul>";
         echo        "<li><a href='index.php?page=content_users'>Mon compte</a></li>";
+        echo        "<li><a href='index.php?page=content_cart'>Mon panier</a></li>";
         echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
         echo    "</ul>";
         echo '</div>';
@@ -85,7 +86,7 @@ function getPageTitle($askedPage){
 }
 
 function generateMenu(){
-    $xml = simplexml_load_file("pages.xml");
+/*    $xml = simplexml_load_file("pages.xml");
  
   $tabPages = $xml->page;
  
@@ -94,9 +95,14 @@ function generateMenu(){
   
   foreach($tabPages as $page){
       echo '<li><a href="index.php?page='.$page->name.'">'.$page->title.'</a></li>';
-     
-  }
+      
+  } */
     
+  echo '<nav id="menu">
+            <ul>';
+  echo '<li><a href="index.php?page=content_home">Club Cigarette</a></li>';
+  echo '<li><a href="index.php?page=register">Join the Club</a></li>';
+  echo '<li><a href="index.php?page=content_products">The Boutique</a></li>';
   echo '</ul>
         </nav>';
 }

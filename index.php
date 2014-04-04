@@ -30,8 +30,8 @@ require_once("logInOut.php");
         case 'changepassword':User::changepassword();
             break;
     }
-}*/
-
+}
+*/
 // Décommenter la ligne suivante pour afficher le tableau $_SESSION pour le debuggage
 //print_r($_SESSION);
 

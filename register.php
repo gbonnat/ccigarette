@@ -23,8 +23,9 @@ if (isset($_POST['email']) && !$_POST['email']=="" && isset($_POST['password']) 
 }
 
     if ($ok){
-         $_SESSION['loggedIn'] = true;
+        $_SESSION['loggedIn'] = true;
         echo "Bienvenue sur notre site";
+        
        
 
     }

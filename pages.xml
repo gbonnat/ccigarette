@@ -24,6 +24,11 @@ and open the template in the editor.
         <name>register</name>
         <menutitle>register</menutitle>
         <title>Join the Club</title>
-    </page>   
+    </page>  
+    <page>
+        <name>content_cart</name>
+        <menutitle>Mon Panier</menutitle>
+        <title>Mon Panier</title>
+    </page>  
     
 </pages>
