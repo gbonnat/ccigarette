@@ -13,7 +13,7 @@
 <?php
 require_once("User.php");
 
-//voir avec les profs pour dire bonjour M. en ligne
+echo "Bonjour ". $_SESSION['title']. " ". $_SESSION['nom'];
 
 if (isset($_POST["vp"]) && $_POST["vp"] != "" &&
         isset($_POST["up"]) && $_POST["up"] != "" &&
