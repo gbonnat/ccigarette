@@ -8,8 +8,27 @@ and open the template in the editor.
     Author     : Grégoire
 */
 
+html{
+    background: url("images/texture_brique.png");
+    background-repeat: repeat;
+    background-size: 50%;
+    margin: 0;
+}
+
+body{
+    width: 950px;
+    margin: 0 auto;
+    position: relative;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    //background: rgba(0,0,0,0.5);
+}
+
 h1{
     color: rgb(150,20,20);
+    margin: 0;
 }
 
 table{
