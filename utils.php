@@ -16,20 +16,22 @@ function generateHTMLHead($title, $styleSheet) {
 CHAINE_DE_FIN;
 }
 
-function generateHTMLHeader() {
-    echo '<header id="entete">
-            <h1>'."Club Cigarette".'</h1>
-        </header>';
+function generateHTMLHeader($askedPage) {
+    echo '<header><h1 id="logo">'."Club Cigarette".'</h1>';   
     
-    
-    
+    if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]){
+    printLoginForm($askedPage);
+}
     if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
+        echo '<div class="login">';
         echo    "<ul>";
-        echo        "<li><a href='content_users.php'>Mon compte</a></li>";
+        echo        "<li><a href='index.php?page=content_users'>Mon compte</a></li>";
         echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
         echo    "</ul>";
+        echo '</div>';
         }
         
+    echo '</header>';   
 }
 
 function generateHTMLFooter() {

@@ -72,11 +72,9 @@ if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "logout")) {
     <body>
 <?php
 
-generateHTMLHeader();
+generateHTMLHeader($askedPage);
 
-if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]){
-    printLoginForm($askedPage);
-}
+
 generateMenu();
 
 

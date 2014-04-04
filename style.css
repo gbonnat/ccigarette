@@ -19,11 +19,55 @@ body{
     width: 950px;
     margin: 0 auto;
     position: relative;
-    height: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background: white;
+    background: rgba(0,0,0,0.3);
     //background: rgba(0,0,0,0.5);
+}
+
+header{
+    height: 50px;
+    background: rgb(220,220,220);
+}
+
+#logo{
+    display: inline-block;
+    width: 250px;
+    vertical-align: middle;
+}
+
+li{
+    float: left;
+    width: 120px;
+    vertical-align: middle;
+}
+
+.login{
+    display: inline-block;
+    width: 500px;
+    vertical-align: middle;
+}
+
+#menu{
+    height: 25px;
+    display: block;
+}
+
+#menu > ul > li{
+    width: 225px;
+    list-style-type: none;
+}
+#menu > ul > li > a {
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+
+#content{
+    height: 1000px;
+    margin: 15px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 h1{
