@@ -75,6 +75,23 @@ h1{
     margin: 0;
 }
 
+
+.product_box{
+    height: 200px;
+    width: 400px;
+    margin: 20px;
+    float: left;
+    border: solid 2px darkolivegreen;
+}
+
+.image_box > img{
+    height: 200px;
+}
+.image_box{
+    overflow: hidden;
+}
+
+
 table{
     border:1px solid  black;
 }
@@ -112,4 +129,8 @@ footer > p{
 
 a{
     text-decoration: none;
+}
+
+img{
+    max-width: 850px;
 }
