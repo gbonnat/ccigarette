@@ -11,6 +11,7 @@
                     <h3>$cig->product</h3>
                     <h3>For only $cig->price € !</h3>
                     <img src="images/products/product$id.jpg">
+                    <input type="button" value="Buy">
                 </div>
             </div>
             
