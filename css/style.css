@@ -11,7 +11,7 @@ and open the template in the editor.
 html{
     background: url("../images/texture_brique.png");
     background-repeat: repeat;
-    background-size: 50%;
+    background-size: 45%;
     margin: 0;
 }
 
@@ -153,4 +153,16 @@ a{
 
 img{
     max-width: 850px;
+}
+
+#scrollup > img{
+    display: block;
+    margin: auto;
+    height: 40px;
+    background-color: rgb(100,85,60);
+    border-radius: 23px;
+    padding: 3px 0 3px 0;
+}
+#scrollup > img:hover{
+    background-color: rgb(120,100,75);
 }

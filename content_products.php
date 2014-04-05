@@ -1,3 +1,24 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+
+      $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+              $('#up').fadeIn();
+          } else {
+              $('#up').fadeOut();
+          }
+      });
+
+      $('#up').click(function () {
+          $("html, body").animate({
+              scrollTop: 0
+          }, 1500);
+          return false;
+      });
+
+  });
+</script>
+
 <h2>Discover our selection of amazing products</h2>
 
 <?php
@@ -18,9 +39,8 @@
 CHAIN;
         
     }
-    
-    
-    
 
 
 ?>
+
+<a href="#" id="scrollup"><img src="images/up.png" id='up'></a>
