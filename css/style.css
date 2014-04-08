@@ -166,3 +166,24 @@ img{
 #scrollup > img:hover{
     background-color: rgb(120,100,75);
 }
+
+
+.parallax-viewport{ 
+    position:relative; 
+    overflow:hidden; 
+    width:768px; 
+    background-color: #aebcc9; }
+      
+.parallax-layer
+      { position:absolute; 
+      display: block;
+      left: 0;}
+.parallax-layer > img
+      { max-width: none; }
+      
+#parallax {
+    background: rgb(47, 49, 52);
+    height: 300px;
+    margin: auto;
+    display: block;
+}

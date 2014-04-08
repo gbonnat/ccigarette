@@ -13,6 +13,7 @@ function generateHTMLHead($title, $styleSheet) {
         <link rel="stylesheet" type="text/css" href="$styleSheet" />
         <script type="text/javascript" src="js/code.js"></script>    
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>    
+        <script type="text/javascript" src="js/parallax/jquery.parallax.js"></script>    
         <title>$title</title>
     </head>               
 CHAINE_DE_FIN;
