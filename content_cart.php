@@ -9,4 +9,4 @@ require_once('Cart.php');
  */
 ?>
 
-<input type = 'button' name = 'Delete' value = "Delete" onclick = "Cart::cancelCart()" >
+<input type = 'button' name = 'Vider mon panier' value = "Vider mon panier" onclick = "Cart::cancelCart()" >

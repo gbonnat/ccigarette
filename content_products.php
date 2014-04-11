@@ -26,10 +26,15 @@
     for ($id = 1; $id <= 4; $id++) {
         $cig = Product::getProduct($id);
         
-        echo <<<CHAIN
+
+        
+    echo <<<CHAIN
             <div class="product_box">
                 <div class="image_box">
                     <h3>$cig->product</h3>
+          
+
+           
                     <h3>For only $cig->price € !</h3>
                     <img src="images/products/product$id.jpg">
                     <input type="button" value="Buy">
@@ -37,7 +42,9 @@
             </div>
             
 CHAIN;
-        
+         if ($cig->stock == 0){
+            echo "Produit non disponible";
+        };   
     }
 
 
