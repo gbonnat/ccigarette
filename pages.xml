@@ -10,7 +10,7 @@ and open the template in the editor.
         <menutitle>Home Page</menutitle>
         <title>Home</title>
     </page>
-    <page>
+    <page> 
         <name>content_products</name>
         <menutitle>Club Boutique</menutitle>
         <title>The Boutique</title>
