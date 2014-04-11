@@ -19,7 +19,22 @@ class Cart{
         }
 
     }
+       public static function getCart(){
+        $dbh = Database::connect();
+        $query = "SELECT * FROM carts WHERE user=?";
+        $sth = $dbh->prepare($query);
+        $sth->setFetchMode(PDO::FETCH_CLASS,'Cart');
+        $sth->execute(array($_SESSION['email']));       
+        $reponse = null;
+        if ($sth->rowCount()>0){
+            $reponse = $sth->fetch();
+        }
+        $sth->closeCursor();
+        $dbh = null;
+        return $reponse;
+    }
     
+
     function cancelCart() {
         // Update stock
         
@@ -41,18 +56,8 @@ class Cart{
         echo "Votre panier a bien été effacé!";
 }
    
-function creationPanier(){
-   if (!isset($_SESSION['panier'])){
-      $_SESSION['panier']=array();
-      $_SESSION['panier']['libelleProduit'] = array();
-      $_SESSION['panier']['qteProduit'] = array();
-      $_SESSION['panier']['prixProduit'] = array();
-      $_SESSION['panier']['verrou'] = false;
-   }
-   return true;
-}
-}
 
+}
 
 ?>
 

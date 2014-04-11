@@ -3,7 +3,7 @@ class Product{
     public $id;
     public $product;
     public $price;
-    private $stock;
+    public $stock;
     
     
     public static function getProduct($id){
@@ -21,6 +21,7 @@ class Product{
         return $reponse;
     }
 
+    
 }
 
 

@@ -18,6 +18,7 @@ require_once("utils.php");
 require_once("printForms.php");
 require_once("logInOut.php");
 require_once("Product.php");
+require_once("cartProduct.php");
 
 // traitement des contenus de formulaires
 /*if (isset($_GET["todo"])) {

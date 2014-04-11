@@ -28,7 +28,9 @@
     for ($id = 1; $id <= 4; $id++) {
         $cig = Product::getProduct($id);
         
-        echo <<<CHAIN
+
+        
+    echo <<<CHAIN
             <div class="product_box">
                 <div class="product_label">
                     <h3>$cig->product</h3>
@@ -44,7 +46,9 @@
             </div>
             
 CHAIN;
-        
+         if ($cig->stock == 0){
+            echo "Produit non disponible";
+        };   
     }
 
 
