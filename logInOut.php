@@ -23,6 +23,7 @@ function logOut(){
     unset($_SESSION['email']);
     unset($_SESSION['nom']);
     unset($_SESSION['prenom']);
+    unset($_SESSION['title']);
 }
 
 ?>
