@@ -11,24 +11,40 @@ if (Cart::getCart()==null){
     echo "Votre panier est vide";
 }
 else{
-     $cart_id = Cart::getCart();
-        
-     $product_id = cartProduct::getCartContent($cart_id->id);
+// renvoie l'id du panier de l'utilisateur connecté. 
+    $cart_id = Cart::getCart();
+// renvoie un tableau des ids produits dans le panier de l'utilisateur connecté.        
+     $product_list = array();
+     $product_list = cartProduct::getCartContent($cart_id->id);
      
-     $product = Product::getProduct($product_id->idProduct);
-        
+   //renvoie la taille du tableau
+     
+   $taille=count($product_list);
+   
+   //affiche tous les éléments du panier
+   
+   $i=0;
+   While ($taille>0){
+       
+     $Z= $product_list[$i];
+     $i++;
+     $product = Product::getProduct($Z->idProduct);
+     $taille=$taille-1;   
+     
     echo <<<CHAIN
             <div class="product_box">
                 <div class="image_box">
-                    <h3>$product->product</h3>
-                    <h3>quantité $product_id->number  !</h3>
-                    <img src="images/products/product$product_id->idProduct.jpg">
                     
+                    <h3>Vous avez    $Z->number   $product->product dans votre panier</h3>
+                    <img src="images/products/product$Z->idProduct.jpg">
+                    <input type="button" value="Supprimer ce produit">
                 </div>
             </div>
             
 CHAIN;
 }
+}
 ?>
 
-<input type = 'button' name = 'Vider mon panier' value = "Delete" onclick = "Cart::cancelCart()" >
+<input type = 'button' name = 'Vider mon panier' value = "Vider mon panier" onclick = "Cart::cancelCart()" >
+<input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" onclick =  >
