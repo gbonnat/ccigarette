@@ -9,9 +9,11 @@
 	</script>
     
 
-<h2>
-    Welcome to the club
-</h2>
+        <center>
+            <h2>
+                Welcome to the club
+            </h2>
+        </center>
 
 
 <div class="parallax-viewport" id="parallax">

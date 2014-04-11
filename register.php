@@ -1,4 +1,6 @@
-<h2>Register Now</h2>
+<center>
+    <h2>Register Now</h2>
+</center>
 
 
 <?php
@@ -49,7 +51,7 @@ echo<<<FIN
     <input type='text' name='nom' placeholder='Last name' value='$nom'><br>
     <input type='text' name='prenom' placeholder='First Name' value='$prenom'><br>
     <input id="Date of Birth" type=date required name=naissance placeholder="Date of Bith"><br>
-    <input type='submit' action='valider'>
+    <input type='submit' action='valider' class='buttons'>
 </form>
 FIN;
     }
