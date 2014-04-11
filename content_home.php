@@ -10,11 +10,9 @@
     
 
 <h2>
-    Bienvenue au club. 
+    Welcome to the club
 </h2>
 
-<h3>Attention, ici on est très sélect</h3>
-<p>Nous avons un superbe choix d'e-cigarettes, des roses, des bleues, des vertes...</p>
 
 <div class="parallax-viewport" id="parallax">
     <ul>

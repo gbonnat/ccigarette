@@ -1,4 +1,4 @@
-//<h2>M'inscrire</h2>
+<h2>Register Now</h2>
 
 
 <?php
@@ -39,15 +39,15 @@ if (isset($_POST['email']) && !$_POST['email']=="" && isset($_POST['password']) 
 
 
 echo<<<FIN
-<form action='index.php?page=register' method='POST'>
+<form action='index.php?page=register' method='POST' id='register'>
     <input type='email' name='email' placeholder='email'><br>
-    <input type='password' name='password' placeholder='mot de passe'><br>
-    <input type='password' name='mdp2' placeholder='mot de passe (confirmation)'><br>
-    <input name="title" value="Mme" type="radio" checked="checked" required />Mme
-    <input name="title" value="M." type="radio" />M. <br>
-    <input type='text' name='nom' placeholder='nom' value='$nom'><br>
-    <input type='text' name='prenom' placeholder='prénom' value='$prenom'><br>
-    <input id="Date of Birth" type=date required name=naissance placeholder="Dare of Bith"><br>
+    <input type='password' name='password' placeholder='password'><br>
+    <input type='password' name='mdp2' placeholder='repeat password'><br>
+    <input name="title" value="W" type="radio" checked="checked" required />Mme
+    <input name="title" value="M" type="radio" />M. <br>
+    <input type='text' name='nom' placeholder='Last name' value='$nom'><br>
+    <input type='text' name='prenom' placeholder='First Name' value='$prenom'><br>
+    <input id="Date of Birth" type=date required name=naissance placeholder="Date of Bith"><br>
     <input type='submit' action='valider'>
 </form>
 FIN;

@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 html{
-    background: url("../images/texture_brique.png");
+    background: url("../images/texture_brique.png") fixed;
     background-repeat: repeat;
     background-size: 45%;
     margin: 0;
@@ -59,6 +59,16 @@ li{
     width: 500px;
     vertical-align: middle;
     margin-left: 65px;
+}
+
+#register{
+    width: 180px;
+    display: block;
+    margin: auto;
+}
+
+#register > input{
+    margin: 8px;
 }
 
 #menu{
@@ -171,9 +181,17 @@ img{
 .parallax-viewport{ 
     position:relative; 
     overflow:hidden; 
-    width:768px; 
+    width:767px; 
     background-color: #aebcc9; }
-      
+
+#parallax {
+    background: rgb(150, 190, 220);
+    height: 300px;
+    margin: auto;
+    display: block;
+    border-radius: 15px;
+}
+
 .parallax-layer
       { position:absolute; 
       display: block;
@@ -181,9 +199,4 @@ img{
 .parallax-layer > img
       { max-width: none; }
       
-#parallax {
-    background: rgb(47, 49, 52);
-    height: 300px;
-    margin: auto;
-    display: block;
-}
+
