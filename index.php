@@ -56,7 +56,7 @@ if ($authorized) {
 } else {
     $pageTitle = 'Erreur';
 }
-generateHTMLHead($pageTitle, 'style.css');
+generateHTMLHead($pageTitle, 'css/style.css');
 
 
 

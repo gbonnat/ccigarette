@@ -9,9 +9,9 @@ and open the template in the editor.
 */
 
 html{
-    background: url("images/texture_brique.png");
+    background: url("../images/texture_brique.png") fixed;
     background-repeat: repeat;
-    background-size: 50%;
+    background-size: 45%;
     margin: 0;
 }
 
@@ -27,7 +27,9 @@ body{
 
 header{
     height: 70px;
-    background: rgb(210,190,150);
+    background: url("../images/texture_paper.png");
+    background-repeat: repeat;
+    //background: rgb(210,190,150);
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -56,6 +58,17 @@ li{
     display: inline-block;
     width: 500px;
     vertical-align: middle;
+    margin-left: 65px;
+}
+
+#register{
+    width: 180px;
+    display: block;
+    margin: auto;
+}
+
+#register > input{
+    margin: 8px;
 }
 
 #menu{
@@ -70,12 +83,19 @@ li{
 #menu > ul > li > a {
     color: whitesmoke;
     font-size: 1.5em;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+#menu > ul > li > a:hover {
+    background-color: rgba(0,0,0,0.5);
 }
 
 #content{
-    height: 1000px;
+    min-height: 500px;
     margin: 15px;
-    background: white;
+    background: url("../images/texture_paper.png");
+    background-repeat: repeat;
+    //background: rgb(255,255,240);
     border-radius: 10px;
     padding: 5px;
 }
@@ -113,7 +133,7 @@ footer{
     margin: 0;
     height: 70px;
     background-color: rgb(100,85,60);
-    margin-bottom: -20px;
+    margin-bottom: 20px;
 }
 
 footer > p{
@@ -144,3 +164,39 @@ a{
 img{
     max-width: 850px;
 }
+
+#scrollup > img{
+    display: block;
+    margin: auto;
+    height: 40px;
+    background-color: rgb(100,85,60);
+    border-radius: 23px;
+    padding: 3px 0 3px 0;
+}
+#scrollup > img:hover{
+    background-color: rgb(120,100,75);
+}
+
+
+.parallax-viewport{ 
+    position:relative; 
+    overflow:hidden; 
+    width:767px; 
+    background-color: #aebcc9; }
+
+#parallax {
+    background: rgb(150, 190, 220);
+    height: 300px;
+    margin: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.parallax-layer
+      { position:absolute; 
+      display: block;
+      left: 0;}
+.parallax-layer > img
+      { max-width: none; }
+      
+
