@@ -22,7 +22,7 @@ CHAINE_DE_FIN;
 function generateHTMLHeader($askedPage) {
     echo '<header>';
     echo '<img src="images/logo_cc.png" id="logo_cc">';
-    echo '<h1 id="logo">'."Club Cigarette".'</h1>';   
+    echo '<a href="index.php"><h1 id="logo">'."Club Cigarette".'</h1></a>';   
     
     if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]){
     printLoginForm($askedPage);
@@ -105,7 +105,7 @@ function generateMenu(){
     
   echo '<nav id="menu">
             <ul>';
-  echo '<li><a href="index.php?page=content_home">Club Cigarette</a></li>';
+  echo '<li><a href="index.php?page=content_home">Home</a></li>';
   echo '<li><a href="index.php?page=register">Join the Club</a></li>';
   echo '<li><a href="index.php?page=content_products">The Boutique</a></li>';
   echo '</ul>

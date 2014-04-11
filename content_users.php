@@ -1,13 +1,9 @@
-<h2>Bienvenue sur votre espace perso !</h2>
+<center>
+    <h2>Your account</h2>
+</center>
 
 
-
-
-
-
-
-
-<h3>Mettre à jour mon mot de passe</h3>
+<h3>Update my password</h3>
 
 
 <?php

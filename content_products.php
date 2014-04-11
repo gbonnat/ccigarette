@@ -19,7 +19,9 @@
   });
 </script>
 
-<h2>Discover our selection of amazing products</h2>
+<center>
+    <h2>Discover our selection of amazing products</h2>
+</center>
 
 <?php
 
@@ -30,12 +32,17 @@
         
     echo <<<CHAIN
             <div class="product_box">
-                <div class="image_box">
+                <div class="product_label">
                     <h3>$cig->product</h3>
                     <h3>For only $cig->price € !</h3>
-                    <img src="images/products/product$id.jpg">
-                    <input type="button" value="Buy">
                 </div>
+                <div class="image_box">
+                <div id="zoombox">
+                    <img src="images/products/product$id.jpg">
+                </div>
+                    
+                </div>
+                <input type="button" value="Buy" class='buttons'>
             </div>
             
 CHAIN;
@@ -47,4 +54,5 @@ CHAIN;
 
 ?>
 
+<div><center>Up</center></div>
 <a href="#" id="scrollup"><img src="images/up.png" id='up'></a>
