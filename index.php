@@ -68,6 +68,9 @@ if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "login")) {
 if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "logout")) {
     logOut();
 }
+if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "add_to_cart")) {
+    Product::add_to_cart();
+}
 ?>
 
 <html>    

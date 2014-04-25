@@ -28,8 +28,6 @@
     for ($id = 1; $id <= 4; $id++) {
         $cig = Product::getProduct($id);
         
-
-        
     echo <<<CHAIN
             <div class="product_box">
                 <div class="product_label">
@@ -42,7 +40,9 @@
                 </div>
                     
                 </div>
-                <input type="button" value="Buy" class='buttons'>
+            <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
+                <input type="submit" value="Buy" class='buttons'>
+            </form>
             </div>
             
 CHAIN;

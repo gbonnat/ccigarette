@@ -20,6 +20,11 @@ class Product{
         $dbh = null;
         return $reponse;
     }
+    
+    public static function add_to_cart(){
+        //use $_GET['id_product'], $_SESSION['email']
+        //checkout logInOut.php functions for comparison
+    }
 
     
 }
