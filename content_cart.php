@@ -37,7 +37,7 @@ else{
                     
                     <h3>Vous avez    $Z->number   $product->product dans votre panier</h3>
                     <img src="images/products/product$Z->idProduct.jpg">
-                    <input type="button" value="Supprimer ce produit">
+                    <input type="button" value="Supprimer ce produit du panier">
                 </div>
             </div>
             
