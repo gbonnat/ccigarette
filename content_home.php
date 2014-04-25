@@ -14,6 +14,12 @@
                 Welcome to the club
             </h2>
         </center>
+        
+        <center>
+            <h2>
+                Find the cigarettes that suit your style
+            </h2>
+        </center>
 
 
 <div class="parallax-viewport" id="parallax">
@@ -24,7 +30,23 @@
         <li class="parallax-layer"  style="width: 1360px; height: 320px;"><img src="images/3_wood.png" alt="" style="position: absolute;left: 0px;top: 60px"></li>
     </ul>
 </div>
+        
+        
+        <center>
+            <h2>
+                Get them delivered to your door every month
+            </h2>
+        </center>
+        
+        
+        <center>
+            <h2>
+                <span>Save up to 1000€</span> compared to traditional cigarettes
+            </h2>
+        </center>
 
+        
+        <button href="index.php?page=content_products" class="buttons" id="get_started">Get started</button>
 <?php
 
 

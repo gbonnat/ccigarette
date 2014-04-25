@@ -30,9 +30,9 @@ function generateHTMLHeader($askedPage) {
     if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
         echo '<div class="login">';
         echo    "<ul>";
-        echo        "<li><a href='index.php?page=content_users'>Mon compte</a></li>";
-        echo        "<li><a href='index.php?page=content_cart'>Mon panier</a></li>";
-        echo        "<li><a href='index.php?todo=logout'>Logout</a></li>";
+        echo        "<li><a href='index.php?page=content_users' class='login_text'>My account</a></li>";
+        echo        "<li><a href='index.php?page=content_cart' class='login_text'>My cart</a></li>";
+        echo        "<li><a href='index.php?todo=logout' class='login_text'>Logout</a></li>";
         echo    "</ul>";
         echo '</div>';
         }
