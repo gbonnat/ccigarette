@@ -8,7 +8,12 @@ require_once('Cart.php');
  * and open the template in the editor.
  */
 if (Cart::getCart()==null){
-    echo "Votre panier est vide";
+    echo "Erreur - Vous n'avez pas de panier";
+    //n'est jamais sensé l'afficher puisque le panier est créé au moment où l'on se register
+}
+
+if (cartProduct::getCartContent(Cart::getCart()->id)==null){
+        echo "Votre panier est vide";
 }
 else{
 // renvoie l'id du panier de l'utilisateur connecté. 

@@ -32,6 +32,7 @@ class cartProduct{
        $sth->execute(array($_GET['id_cart'],$_GET['id_product']));       
        }
        
+       //supprime tous les produits du panier correspondant sans supprimer le panier. Celui-ci sera vide.
        public static function deleteAllProduct(){
        $dbh = Database::connect();
        $query = "DELETE FROM cartcontent WHERE idCart=?";
