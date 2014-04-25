@@ -12,9 +12,11 @@ class cartProduct{
         $sth = $dbh->prepare($query);
         $sth->setFetchMode(PDO::FETCH_CLASS,'cartProduct');
         $sth->execute(array($cart_id));       
-        $reponse = null;
-        if ($sth->rowCount()>0){
-        $reponse = $sth->fetch();
+        $reponse = array();
+        
+        while ($myobj = $sth->fetch()){
+            array_push($reponse, $myobj);
+            
         }
         $sth->closeCursor();
         $dbh = null;
