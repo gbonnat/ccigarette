@@ -8,6 +8,19 @@ and open the template in the editor.
     Author     : Grégoire
 */
 
+@font-face{
+    font-family: bebas;
+    src: url('bebas/BEBAS.TTF');
+}
+@font-face{
+    font-family: doris;
+    src: url('dorispp/DORISBR.TTF');
+}
+@font-face{
+    font-family: sansation;
+    src: url('sansation/Sansation_Bold.TTF');
+}
+
 html{
     background: url("../images/texture_brique.png") fixed;
     background-repeat: repeat;
@@ -32,6 +45,12 @@ header{
     //background: rgb(210,190,150);
     padding-left: 15px;
     padding-right: 15px;
+}
+
+input{
+    border: 1px solid white;
+    padding: 5px;
+    height: 22px;
 }
 
 #logo{
@@ -61,6 +80,22 @@ li{
     margin-left: 65px;
 }
 
+#login_btn{
+    height: 35px;
+    width: 50px;
+}
+
+.login_text{
+    font-family: sansation;
+    color: darkred;
+    vertical-align: middle;
+    font-size: 1em;
+    margin: 5px
+}
+.login_text:hover{
+    text-decoration: underline;
+}
+
 #register{
     width: 180px;
     display: block;
@@ -83,6 +118,7 @@ li{
 #menu > ul > li > a {
     color: whitesmoke;
     font-size: 1.5em;
+    font-family: bebas;
     border-radius: 3px;
     padding: 5px 10px;
 }
@@ -93,12 +129,24 @@ li{
 #content{
     min-height: 500px;
     margin: 15px;
+    margin-top: 20px;
     background: url("../images/texture_paper.png");
     background-repeat: repeat;
     //background: rgb(255,255,240);
     border-radius: 10px;
     padding: 5px;
 }
+
+#get_started{
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 1em;
+}
+
 
 h1{
     color: rgb(150,20,20);
