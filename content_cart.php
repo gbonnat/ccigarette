@@ -8,14 +8,19 @@ require_once('Cart.php');
  * and open the template in the editor.
  */
 if (Cart::getCart()==null){
-    echo "Votre panier est vide";
+    echo "Erreur - Vous n'avez pas de panier";
+    //n'est jamais sensé l'afficher puisque le panier est créé au moment où l'on se register
+}
+
+if (cartProduct::getCartContent(Cart::getCart()->id)==null){
+        echo "Votre panier est vide";
 }
 else{
 // renvoie l'id du panier de l'utilisateur connecté. 
-    $cart_id = Cart::getCart();
+    $id_cart = Cart::getCart();
 // renvoie un tableau des ids produits dans le panier de l'utilisateur connecté.        
      $product_list = array();
-     $product_list = cartProduct::getCartContent($cart_id->id);
+     $product_list = cartProduct::getCartContent($id_cart->id);
      
    //renvoie la taille du tableau
      
@@ -37,14 +42,22 @@ else{
                     
                     <h3>Vous avez    $Z->number   $product->product dans votre panier</h3>
                     <img src="images/products/product$Z->idProduct.jpg">
-                    <input type="button" value="Supprimer ce produit du panier">
+                    <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
+                    <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
+                    </form>
+    
                 </div>
             </div>
             
 CHAIN;
 }
+   echo <<<CHAIN
+<form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
+<input type="submit" value="Vider mon panier" class='buttons'>
+</form>
+CHAIN;
 }
 ?>
 
-<input type = 'button' name = 'Vider mon panier' value = "Vider mon panier" onclick = "Cart::cancelCart()" >
+
 <input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" onclick =  >

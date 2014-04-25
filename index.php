@@ -71,6 +71,12 @@ if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "logout")) {
 if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "add_to_cart")) {
     Product::add_to_cart();
 }
+if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "deleteProduct")) {
+    cartProduct::deleteProduct();
+}
+if (array_key_exists('todo', $_GET) && ($_GET['todo'] == "deleteAllProduct")) {
+    cartProduct::deleteAllProduct();
+}
 ?>
 
 <html>    

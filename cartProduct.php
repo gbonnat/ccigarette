@@ -7,12 +7,12 @@ class cartProduct{
     public $idProduct;
     public $number;
     
-        public static function getCartContent($cart_id){
+        public static function getCartContent($id_cart){
         $dbh = Database::connect();    
         $query = "SELECT * FROM cartcontent WHERE idCart=?";
         $sth = $dbh->prepare($query);
         $sth->setFetchMode(PDO::FETCH_CLASS,'cartProduct');
-        $sth->execute(array($cart_id));       
+        $sth->execute(array($id_cart));       
         $reponse = array();
         
         while ($myobj = $sth->fetch()){
@@ -24,12 +24,21 @@ class cartProduct{
         return $reponse;
         
        }
-       public static function deleteProduct($cart_id,$idProduct){
+       public static function deleteProduct(){
        $dbh = Database::connect(); 
        $query = "DELETE FROM cartcontent WHERE idCart=? and idProduct=?";
        $sth = $dbh->prepare($query);
        $sth->setFetchMode(PDO::FETCH_CLASS,'cartProduct');       
-       $sth->execute(array($cart_id,$idProduct));       
+       $sth->execute(array($_GET['id_cart'],$_GET['id_product']));       
+       }
+       
+       //supprime tous les produits du panier correspondant sans supprimer le panier. Celui-ci sera vide.
+       public static function deleteAllProduct(){
+       $dbh = Database::connect();
+       $query = "DELETE FROM cartcontent WHERE idCart=?";
+       $sth = $dbh->prepare($query);
+       $sth->setFetchMode(PDO::FETCH_CLASS,'cartProduct');  
+       $sth->execute(array($_GET['id_cart'])); 
        }
 }
 ?>
