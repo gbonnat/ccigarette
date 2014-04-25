@@ -23,7 +23,28 @@ class Product{
     
     public static function add_to_cart(){
         //use $_GET['id_product'], $_SESSION['email']
-        //checkout logInOut.php functions for comparison
+        $dbh = Database::connect();
+        
+        $query = "SELECT * FROM Carts WHERE user=?";
+        $sth = $dbh->prepare($query);
+        $sth->execute(array($_SESSION['email']));       
+        $reponse = null;
+        if ($sth->rowCount()>0){
+            $reponse = $sth->fetch();
+        }
+        var_dump($reponse);
+        
+        $id_cart=$reponse["id"];
+        $id_product=filter_input(INPUT_GET, 'id_product');
+        
+        var_dump($id_cart);
+        
+        $query2 = "INSERT INTO Cartcontent(idCart,idProduct,number) VALUES (?,?,1)";
+        $sth2 = $dbh->prepare($query2);
+        $sth2->execute(array($id_cart,$id_product));       
+
+        return ($sth->rowCount()>0);
+
     }
 
     
