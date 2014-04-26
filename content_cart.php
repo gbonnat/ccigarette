@@ -47,20 +47,24 @@ else{
                     <div id="zoombox">
                         <img src="images/products/product$Z->idProduct.jpg">
                     </div>
+                </div>
             
-                <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
-                    <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
-                </form>
-            </div>
+            <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
+                <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
+            </form>
                     
         </div>
             
 CHAIN;
 }
    echo <<<CHAIN
-<form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
-<input type="submit" value="Vider mon panier" class='buttons'>
-</form>
+    <div style="width: 912px; display: inline-block;">
+        <center><h3></h3></center>
+        <form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
+        <input type="submit" value="Vider mon panier" class='buttons'>
+        </form>
+           
+    </div>
 CHAIN;
 }
 ?>

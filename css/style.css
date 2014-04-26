@@ -154,7 +154,13 @@ h1{
 }
 
 h2{
-    
+    color: rgb(70,0,0);
+    text-shadow: rgb(45,45,45) 1px 1px 10px;
+    font-size: 1.5em;
+}
+h2>span{
+    font-size: 1.7em;
+    font-weight: bold;
 }
 
 .product_box{
@@ -306,7 +312,7 @@ img{
     height: 300px;
     margin: auto;
     display: block;
-    border-radius: 15px;
+    border-radius: 2px;
 }
 
 .parallax-layer
