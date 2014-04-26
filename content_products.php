@@ -1,22 +1,22 @@
 <script type="text/javascript">
-  $(document).ready(function () {
+    $(document).ready(function() {
 
-      $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-              $('#up').fadeIn();
-          } else {
-              $('#up').fadeOut();
-          }
-      });
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#up').fadeIn();
+            } else {
+                $('#up').fadeOut();
+            }
+        });
 
-      $('#up').click(function () {
-          $("html, body").animate({
-              scrollTop: 0
-          }, 1500);
-          return false;
-      });
+        $('#up').click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1500);
+            return false;
+        });
 
-  });
+    });
 </script>
 
 <center>
@@ -24,10 +24,9 @@
 </center>
 
 <?php
+for ($id = 1; $id <= 4; $id++) {
+    $cig = Product::getProduct($id);
 
-    for ($id = 1; $id <= 4; $id++) {
-        $cig = Product::getProduct($id);
-        
     echo <<<CHAIN
             <div class="product_box">
                 <div class="product_label">
@@ -40,21 +39,45 @@
                         <img src="images/products/product$id.jpg">
                     </div>      
                 </div>
-            
+CHAIN;
+    
+    if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]){
+    echo <<<CHAIN
                 <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
                     <input type="submit" value="Buy" class='buttons' >
                 </form>
-            
+CHAIN;
+    }
+    
+    echo <<<CHAIN
             </div>
             
 CHAIN;
-//         if ($cig->stock == 0){
-//            echo "Produit non disponible";
-//        };   
-    }
-
-
+    
+          
+//           if ($cig->stock == 0){
+//                echo  <<<CHAIN
+//                    </div>
+//                        "Produit non disponible"
+//                    </div>
+//CHAIN;
+//                }
+//           else {
+//            
+//    echo <<<CHAIN
+//            </div>
+//                <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
+//                    <input type="submit" value="Buy" class='buttons' >
+//                </form>
+//            </div>
+//            
+//            
+//
+//CHAIN;
+//   }
+}
 ?>
+
 
 <div><center>Up</center></div>
 <a href="#" id="scrollup"><img src="images/up.png" id='up'></a>

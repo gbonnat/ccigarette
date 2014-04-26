@@ -1,4 +1,27 @@
-<center><h2>Voici le contenu de votre panier !</h2></center>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#up').fadeIn();
+            } else {
+                $('#up').fadeOut();
+            }
+        });
+
+        $('#up').click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1500);
+            return false;
+        });
+
+    });
+</script>
+
+<center>
+    <h2>Here is what is in your cart</h2>
+</center>
     
     <?php
 require_once('Cart.php');
@@ -13,7 +36,7 @@ if (Cart::getCart()==null){
 }
 
 if (cartProduct::getCartContent(Cart::getCart()->id)==null){
-        echo "Votre panier est vide";
+        echo "Your cart is enpty now, check the amazing products in the boutique!";
 }
 else{
 // renvoie l'id du panier de l'utilisateur connecté. 
@@ -50,7 +73,7 @@ else{
                 </div>
             
             <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
-                <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
+                <input type="submit" value="Delete from cart" class='buttons'>
             </form>
                     
         </div>
@@ -61,13 +84,10 @@ CHAIN;
     <div style="width: 912px; display: inline-block;">
         <center><h3></h3></center>
         <form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
-        <input type="submit" value="Vider mon panier" class='buttons'>
+        <input type="submit" value="Empty cart" class='buttons'>
         </form>
            
     </div>
 CHAIN;
 }
 ?>
-
-
-<input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" class="buttons">
