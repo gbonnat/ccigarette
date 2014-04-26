@@ -32,6 +32,7 @@ class Product{
         if ($sth->rowCount()>0){
             $reponse = $sth->fetch();
         }
+        var_dump($_SESSION['email']);
         
         $id_cart=$reponse["id"];
         $id_product=filter_input(INPUT_GET, 'id_product');

@@ -41,7 +41,7 @@
                     
                 </div>
             <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
-                <input type="submit" value="Buy" class='buttons'>
+                <input type="submit" value="Buy" class='buttons' >
             </form>
             </div>
             
