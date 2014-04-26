@@ -1,4 +1,27 @@
-<center><h2>Voici le contenu de votre panier !</h2></center>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#up').fadeIn();
+            } else {
+                $('#up').fadeOut();
+            }
+        });
+
+        $('#up').click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 1500);
+            return false;
+        });
+
+    });
+</script>
+
+<center>
+    <h2>Voici le contenu de votre panier !</h2>
+</center>
     
     <?php
 require_once('Cart.php');
@@ -48,22 +71,27 @@ else{
                         <img src="images/products/product$Z->idProduct.jpg">
                     </div>
             
-                <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
-                    <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
-                </form>
-            </div>
+                    <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
+                        <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
+                    </form>
+                </div>
                     
         </div>
             
 CHAIN;
 }
    echo <<<CHAIN
-<form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
-<input type="submit" value="Vider mon panier" class='buttons'>
-</form>
+        </div>
+            <form action="index.php?todo=deleteAllProduct&page=content_cart&id_cart=$id_cart->id" method="POST">
+                <input type="submit" value="Vider mon panier" class='buttons'>
+            </form>
+        </div>        
 CHAIN;
 }
 ?>
 
 
 <input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" class="buttons">
+
+<div><center>Up</center></div>
+<a href="#" id="scrollup"><img src="images/up.png" id='up'></a>

@@ -43,18 +43,18 @@ CHAIN;
           
            if ($cig->stock == 0){
                 echo  <<<CHAIN
-                </div>
-               "Produit non disponible"
-               </div>
+                    </div>
+                        "Produit non disponible"
+                    </div>
 CHAIN;
                 }
            else {
             
     echo <<<CHAIN
             </div>
-            <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
-                <input type="submit" value="Buy" class='buttons' >
-            </form>
+                <form action="index.php?todo=add_to_cart&page=content_cart&id_product=$id" method="POST">
+                    <input type="submit" value="Buy" class='buttons' >
+                </form>
             </div>
 
 CHAIN;
