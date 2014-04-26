@@ -46,9 +46,9 @@
             </div>
             
 CHAIN;
-         if ($cig->stock == 0){
-            echo "Produit non disponible";
-        };   
+//         if ($cig->stock == 0){
+//            echo "Produit non disponible";
+//        };   
     }
 
 
