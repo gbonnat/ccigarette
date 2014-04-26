@@ -32,12 +32,12 @@ class Product{
         if ($sth->rowCount()>0){
             $reponse = $sth->fetch();
         }
-        var_dump($reponse);
+        var_dump($_SESSION['email']);
         
         $id_cart=$reponse["id"];
         $id_product=filter_input(INPUT_GET, 'id_product');
         
-        var_dump($id_cart);
+        //var_dump($id_cart);
         
         $query2 = "INSERT INTO Cartcontent(idCart,idProduct,number) VALUES (?,?,1)";
         $sth2 = $dbh->prepare($query2);

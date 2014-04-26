@@ -5,6 +5,7 @@
 
 <?php
 require_once('User.php');
+require_once('Cart.php');
 
 $nom = "";
 if (array_key_exists('nom',$_POST)){
@@ -27,10 +28,9 @@ if (isset($_POST['email']) && !$_POST['email']=="" && isset($_POST['password']) 
     if ($ok){
         $_SESSION['loggedIn'] = true;
         echo "Bienvenue sur notre site";
-        
-       
-
+        Cart::createCart($_POST['email']);
     }
+    
     else{
         if ($tentative){
             echo "Email déjà rattaché à un compte!";
@@ -51,7 +51,7 @@ echo<<<FIN
     <input type='text' name='nom' placeholder='Last name' value='$nom'><br>
     <input type='text' name='prenom' placeholder='First Name' value='$prenom'><br>
     <input id="Date of Birth" type=date required name=naissance placeholder="Date of Bith"><br>
-    <input type='submit' action='valider' class='buttons'>
+    <input type='submit' action='valider' class='buttons' >
 </form>
 FIN;
     }

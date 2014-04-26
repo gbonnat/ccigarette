@@ -34,17 +34,13 @@ class Cart{
         return $reponse;
     }
     
-     public static function createCart(){
+     public static function createCart($email){
            $dbh = Database::connect();
-        if (User::getUser($email)==NULL){
-            $query = "INSERT INTO Carts(id,user,timestamp) VALUES (?,?,15)";
+            $query = "INSERT INTO Carts(id,user,timestamp) VALUES ('',?,15)";
             $sth = $dbh->prepare($query);
             $sth->execute(array($email));
             return ($sth->rowCount()>0);
-        }
-        else{
-            return false;
-        }
+        
      }
     
    
