@@ -1,4 +1,4 @@
-<h2>Voici le contenu de votre panier !</h2>
+<center><h2>Voici le contenu de votre panier !</h2></center>
     
     <?php
 require_once('Cart.php');
@@ -37,17 +37,23 @@ else{
      $taille=$taille-1;   
      
     echo <<<CHAIN
-            <div class="product_box">
-                <div class="image_box">
-                    
-                    <h3>Vous avez    $Z->number   $product->product dans votre panier</h3>
-                    <img src="images/products/product$Z->idProduct.jpg">
-                    <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
-                    <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
-                    </form>
-    
+        <div class="product_box">
+     
+                <div class="product_label">
+                    <h3>$Z->number   $product->product</h3>
                 </div>
+            
+                <div class="image_box">
+                    <div id="zoombox">
+                        <img src="images/products/product$Z->idProduct.jpg">
+                    </div>
+            
+                <form action="index.php?todo=deleteProduct&page=content_cart&id_product=$Z->idProduct&id_cart=$id_cart->id" method="POST">
+                    <input type="submit" value="Supprimer ce produit du panier" class='buttons'>
+                </form>
             </div>
+                    
+        </div>
             
 CHAIN;
 }
@@ -60,4 +66,4 @@ CHAIN;
 ?>
 
 
-<input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" onclick =  >
+<input type = 'button' name = 'Procéder au paiement' value = "Procéder au paiement" class="buttons">

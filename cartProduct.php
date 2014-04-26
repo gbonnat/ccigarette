@@ -24,6 +24,7 @@ class cartProduct{
         return $reponse;
         
        }
+       //supprime le produit sélectionné de la base cartProduct
        public static function deleteProduct(){
        $dbh = Database::connect(); 
        $query = "DELETE FROM cartcontent WHERE idCart=? and idProduct=?";
