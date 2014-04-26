@@ -34,27 +34,19 @@ class Cart{
         return $reponse;
     }
     
-
-    function cancelCart() {
-        // Update stock
-        
-        echo 'r';
-        $query="UPDATE products as p, cartContent as c SET p.stock=p.stock+c.number WHERE 
-        (c.idCart='$this->id') AND (p.id=p.idProduct)";
-        $sth = $dbh->prepare($query);
-        $sth ->execute();
-
-        $query="DELETE FROM cartContent WHERE idCart='$this->id'";
-        $sth = $dbh->prepare($query);
-        $sth ->execute();
-        
-
-        $query = "DELETE FROM Cart WHERE id='$this->id'";
-        $sth = $dbh->prepare($query);
-        $sth ->execute();
-        
-        echo "Votre panier a bien été effacé!";
-}
+     public static function createCart(){
+           $dbh = Database::connect();
+        if (User::getUser($email)==NULL){
+            $query = "INSERT INTO Carts(id,user,timestamp) VALUES (?,?,15)";
+            $sth = $dbh->prepare($query);
+            $sth->execute(array($email));
+            return ($sth->rowCount()>0);
+        }
+        else{
+            return false;
+        }
+     }
+    
    
 
 }
